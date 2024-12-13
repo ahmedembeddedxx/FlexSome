@@ -45,11 +45,12 @@ function getGrade(absolute) {
   if (absolute >= 86) return "A/A+";
   if (absolute >= 82) return "A-";
   if (absolute >= 78) return "B+";
-  if (absolute >= 72) return "B";
-  if (absolute >= 68) return "B-";
-  if (absolute >= 62) return "C+";
-  if (absolute >= 58) return "C";
-  if (absolute >= 55) return "C-";
+  if (absolute >= 74) return "B";
+  if (absolute >= 70) return "B-";
+  if (absolute >= 66) return "C+";
+  if (absolute >= 62) return "C";
+  if (absolute >= 58) return "C-";
+  if (absolute >= 54) return "D+";
   if (absolute >= 50) return "D";
   return "F";
 }
@@ -59,7 +60,14 @@ function calculateSubjectSums() {
 
   // Iterate through each subject's section on the page
   document.querySelectorAll(".tab-pane").forEach(subjectTab => {
-    const subjectName = subjectTab.querySelector("h5").textContent.split('-')[0].trim();
+    // const subjectName = subjectTab.querySelector("h5").textContent.split('-')[1].trim();
+    // if the length of the split array is 2, then the subject name is in the first element
+    // else pick last 2 
+
+    const subjectName = subjectTab.querySelector("h5").textContent.split('-').length === 2 ? subjectTab.querySelector("h5").textContent.split('-')[1].trim() : subjectTab.querySelector("h5").textContent.split('-').slice(-2).join('-').trim();
+
+
+
     const weightageElements = subjectTab.querySelectorAll(".weightage");
     const marksElements = subjectTab.querySelectorAll(".ObtMarks");
     const grandTotalMarks = subjectTab.querySelectorAll(".GrandTotal");

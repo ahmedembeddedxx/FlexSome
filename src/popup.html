@@ -12,18 +12,33 @@
       padding: 20px;
       background-color: #f5f5f5;
       color: #333;
-      width: 450px; /* Increased width */
-      height: 350px; /* Increased height */
+      width: 450px;
+      height: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
 
-    h3 {
+    .header {
+      display: flex;
+      align-items: center; /* Vertically align items */
+      justify-content: space-between; /* Add space between elements */
+      width: 100%; /* Full-width header container */
+      max-width: 450px; /* Restrict width */
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
       color: #444;
       font-weight: 500;
-      margin-bottom: 20px;
     }
 
     button {
@@ -59,6 +74,9 @@
     th {
       background-color: #f1f1f1;
       font-weight: bold;
+      position: sticky;
+      top: 0; /* Sticky header */
+      z-index: 1;
     }
 
     tr:nth-child(even) {
@@ -66,33 +84,39 @@
     }
 
     img {
-      width: 48px; /* Set icon size */
+      width: 48px;
       height: 48px;
     }
   </style>
 </head>
 <body>
 
-<img src="icon48.png" alt="Icon" /> <!-- Added image icon -->
-  <h2>FlexSome</h2>
-  <button id="calculate">Calculate</button>
+  <div class="header">
+    <img src="icon48.png" alt="Icon" />
+    <h2>FlexSome</h2>
+    <button id="calculate">Calculate</button>
+  </div>
+   
 
-<div id="table-container" style="overflow-y: auto; height: 300px;">
+  <div id="table-container" style="overflow-y: auto; height: 300px; overflow-x: auto; width: 100%;">
     <table>
-    <thead>
+      <thead>
         <tr>
-        <th>Subject</th>
-        <th>Total Weightages</th>
-        <th>Total Obtained Marks</th>
-        <th>Projected Absolute</th>
-        <th>Projected Grade</th>
-        <th>Projected Average</th>
+          <th>Subject</th>
+          <th>Total Weightages</th>
+          <th>Total Obtained Marks</th>
+          <th>Projected Absolute</th>
+          <th>Projected Grade</th>
+          <th>Projected Average</th>
         </tr>
-    </thead>
-    <tbody>
-    </tbody>
+      </thead>
+      <tbody>
+        <tr>
+
+        </tr>
+      </tbody>
     </table>
-</div>
+  </div>
 
   <script src="popup.js"></script>
 </body>
