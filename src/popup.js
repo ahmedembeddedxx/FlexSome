@@ -110,10 +110,10 @@ function calculateSubjectSums() {
     // Store results for each subject
     subjects.push({
       name: subjectName,
-      totalWeightage: Math.round(totalWeightage),
-      totalObtMarks: Math.round(totalObtMarks),
-      projectedAbsolute: Math.round(projectedAbsolute),
-      projectedAverage: Math.round(projectedAverage),
+      totalWeightage: totalWeightage.toFixed(2),
+      totalObtMarks: totalObtMarks.toFixed(2),
+      projectedAbsolute: projectedAbsolute,
+      projectedAverage: projectedAverage,
     });
   });
 
