@@ -18,7 +18,7 @@ FlexSome is a simple Chrome extension designed to help students calculate their 
 1. Open **Google Chrome** and type `chrome://extensions/` in the address bar to navigate to the Extensions page.
 2. Enable **Developer mode** by toggling the switch at the top-right corner of the Extensions page.
 3. Click the **Load unpacked** button.
-4. Select the folder where you cloned the repository (`FlexSome`) and click **Select Folder**. The extension will now be added to Chrome.
+4. Select the folder `FlexSome/src` where you cloned the repository (`FlexSome`) and click **Select Folder**. The extension will now be added to Chrome.
 
 ### Step 3: Use the Extension
 1. Go to the **FlexStudent portal** and log in using your credentials.
