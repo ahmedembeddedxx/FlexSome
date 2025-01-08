@@ -42,16 +42,16 @@ document.getElementById("calculate").addEventListener("click", async () => {
 
 // Function to determine projected grade based on absolute value
 function getGrade(absolute) {
-  if (absolute >= 86) return "A/A+";
-  if (absolute >= 82) return "A-";
-  if (absolute >= 78) return "B+";
-  if (absolute >= 74) return "B";
-  if (absolute >= 70) return "B-";
-  if (absolute >= 66) return "C+";
-  if (absolute >= 62) return "C";
-  if (absolute >= 58) return "C-";
-  if (absolute >= 54) return "D+";
-  if (absolute >= 50) return "D";
+  if (absolute >= 85.49) return "A/A+";
+  if (absolute >= 81.49) return "A-";
+  if (absolute >= 77.49) return "B+";
+  if (absolute >= 73.49) return "B";
+  if (absolute >= 69.49) return "B-";
+  if (absolute >= 65.49) return "C+";
+  if (absolute >= 61.49) return "C";
+  if (absolute >= 57.49) return "C-";
+  if (absolute >= 53.49) return "D+";
+  if (absolute >= 49.49) return "D";
   return "F";
 }
 
@@ -97,21 +97,23 @@ function calculateSubjectSums() {
 
 
 
+
     });
+    totalWeightage = Math.min(totalWeightage, 100);
 
     if (totalWeightage > 0) {
-      projectedAbsolute = ((totalObtMarks / totalWeightage) * 100).toFixed(2); // Final percentage
+      projectedAbsolute = ((totalObtMarks / totalWeightage) * 100).toFixed(1); // Final percentage
     }
 
     if(totalAverageMarks > 0){
-      projectedAverage = ((totalAverageMarks / totalWeightage) * 100).toFixed(2); // Final percentage
+      projectedAverage = ((totalAverageMarks / totalWeightage) * 100).toFixed(1); // Final percentage
     }
 
     // Store results for each subject
     subjects.push({
       name: subjectName,
-      totalWeightage: totalWeightage.toFixed(2),
-      totalObtMarks: totalObtMarks.toFixed(2),
+      totalWeightage: totalWeightage.toFixed(1),
+      totalObtMarks: totalObtMarks.toFixed(1),
       projectedAbsolute: projectedAbsolute,
       projectedAverage: projectedAverage,
     });
